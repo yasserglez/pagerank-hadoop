@@ -18,4 +18,14 @@
       <useDefaultExcludes>true</useDefaultExcludes>
     </fileSet>
   </fileSets>
+  <files>
+    <file>
+      <source>README.md</source>
+      <outputDirectory></outputDirectory>
+    </file>
+    <file>
+      <source>LICENSE.txt</source>
+      <outputDirectory></outputDirectory>
+    </file>
+  </files>
 </assembly>
