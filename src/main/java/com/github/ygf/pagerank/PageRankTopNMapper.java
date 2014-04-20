@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Yasser Gonzalez Fernandez
+ * Copyright 2014 Yasser Gonzalez Fernandez <ygonzalezfernandez@gmail.com>.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
