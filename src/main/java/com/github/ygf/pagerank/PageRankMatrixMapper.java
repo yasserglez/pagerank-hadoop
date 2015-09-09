@@ -1,17 +1,17 @@
 /*
- * Copyright 2014 Yasser Gonzalez Fernandez <ygonzalezfernandez@gmail.com>.
- * 
+ * Copyright 2014 Yasser Gonzalez <contact@yassergonzalez.com>.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License. 
+ * limitations under the License.
  */
 
 package com.github.ygf.pagerank;
@@ -32,7 +32,7 @@ public class PageRankMatrixMapper extends
 			throws IOException, InterruptedException {
 
 		// This task gets a line from links-simple-sorted.txt that contains the
-		// out links of a page v. It produces results with keys (i, j) 
+		// out links of a page v. It produces results with keys (i, j)
 		// corresponding to the indexes of the block M_{i,j} in which each
 		// link v -> w should be stored. The value is (v, w, degree(v)).
 

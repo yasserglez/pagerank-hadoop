@@ -1,17 +1,17 @@
 /*
- * Copyright 2014 Yasser Gonzalez Fernandez <ygonzalezfernandez@gmail.com>.
- * 
+ * Copyright 2014 Yasser Gonzalez <contact@yassergonzalez.com>.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License. 
+ * limitations under the License.
  */
 
 package com.github.ygf.pagerank;
@@ -29,8 +29,8 @@ import org.apache.hadoop.mapreduce.Partitioner;
 import org.apache.hadoop.mapreduce.lib.output.MapFileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.partition.HashPartitioner;
 
-public class PageRankIterationMapper extends 
-		Mapper<ShortArrayWritable, MatrixBlockWritable, 
+public class PageRankIterationMapper extends
+		Mapper<ShortArrayWritable, MatrixBlockWritable,
 		       ShortWritable, FloatArrayWritable> {
 
 	@Override
@@ -63,7 +63,7 @@ public class PageRankIterationMapper extends
 			Path outputDir = MapFileOutputFormat.getOutputPath(context).getParent();
 			Path vjDir = new Path(outputDir, "v" + (iter - 1));
 			MapFile.Reader[] readers = MapFileOutputFormat.getReaders(vjDir, conf);
-			Partitioner<ShortWritable, FloatArrayWritable> partitioner = 
+			Partitioner<ShortWritable, FloatArrayWritable> partitioner =
 					new HashPartitioner<ShortWritable, FloatArrayWritable>();
 			ShortWritable key = new ShortWritable(j);
 			FloatArrayWritable value = new FloatArrayWritable();

@@ -1,17 +1,17 @@
 /*
- * Copyright 2014 Yasser Gonzalez Fernandez <ygonzalezfernandez@gmail.com>.
- * 
+ * Copyright 2014 Yasser Gonzalez <contact@yassergonzalez.com>.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License. 
+ * limitations under the License.
  */
 
 package com.github.ygf.pagerank;
@@ -26,7 +26,7 @@ import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.mapreduce.Reducer;
 
 public class PageRankMatrixReducer extends
-		Reducer<ShortArrayWritable, ShortArrayWritable, 
+		Reducer<ShortArrayWritable, ShortArrayWritable,
 		        ShortArrayWritable, MatrixBlockWritable> {
 
 	@Override
@@ -37,7 +37,7 @@ public class PageRankMatrixReducer extends
 		// This task receives all the entries in M_{i,j} and builds the compact
 		// representation of the block. See Section 5.2.4 of Mining of Massive
 		// Datasets (http://infolab.stanford.edu/~ullman/mmds.html) for details.
-		// Only blocks with at least one nonzero entry are generated. 
+		// Only blocks with at least one nonzero entry are generated.
 
 		Configuration conf = context.getConfiguration();
 		short blockSize = Short.parseShort(conf.get("pagerank.block_size"));
