@@ -14,20 +14,19 @@
  * limitations under the License.
  */
 
-package com.github.ygf.pagerank;
+package com.yassergonzalez.pagerank;
 
-import org.apache.hadoop.io.ArrayWritable;
-import org.apache.hadoop.io.FloatWritable;
+import org.apache.hadoop.io.ShortWritable;
+import org.apache.hadoop.io.TwoDArrayWritable;
 import org.apache.hadoop.io.Writable;
 
-public class FloatArrayWritable extends ArrayWritable {
+public class MatrixBlockWritable extends TwoDArrayWritable {
 
-	public FloatArrayWritable() {
-		super(FloatWritable.class);
+	public MatrixBlockWritable() {
+		super(ShortWritable.class);
 	}
 
-	public FloatArrayWritable(Writable[] values) {
-		super(FloatWritable.class, values);
+	public MatrixBlockWritable(Writable[][] values) {
+		super(ShortWritable.class, values);
 	}
-
 }

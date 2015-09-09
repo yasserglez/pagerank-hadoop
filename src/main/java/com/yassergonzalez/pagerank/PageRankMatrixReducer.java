@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.ygf.pagerank;
+package com.yassergonzalez.pagerank;
 
 import java.io.IOException;
 import java.util.ArrayList;

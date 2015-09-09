@@ -1,4 +1,4 @@
 #!/bin/bash
 
-hadoop jar page-rank.jar com.github.ygf.pagerank.TitleIndex "$@"
+hadoop jar page-rank.jar com.yassergonzalez.pagerank.TitleIndex "$@"
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.ygf.pagerank;
+package com.yassergonzalez.pagerank;
 
 import java.util.Comparator;
 import java.lang.Comparable;

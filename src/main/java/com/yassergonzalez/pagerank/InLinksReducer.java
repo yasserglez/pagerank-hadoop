@@ -14,18 +14,26 @@
  * limitations under the License.
  */
 
-package com.github.ygf.pagerank;
+package com.yassergonzalez.pagerank;
 
-import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.mapreduce.JobContext;
-import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+import java.io.IOException;
 
-public class UnsplittableTextInputFormat extends TextInputFormat  {
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.mapreduce.Reducer;
 
-	  @Override
-	  protected boolean isSplitable(JobContext context, Path file) {
-		// This prevents Hadoop from splitting the file, i.e., all the lines of
-		// the file will be passed to a single map task.
-		  return false;
-	  }
+public class InLinksReducer extends
+		Reducer<IntWritable, IntWritable, IntWritable, IntWritable> {
+
+	@Override
+	protected void reduce(IntWritable inKey, Iterable<IntWritable> inValues,
+			Context context) throws IOException, InterruptedException {
+
+		int sum = 0;
+
+		for (IntWritable inValue : inValues) {
+			sum += inValue.get();
+		}
+
+		context.write(inKey, new IntWritable(sum));
+	}
 }
